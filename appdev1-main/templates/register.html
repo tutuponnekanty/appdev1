@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Register</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, black, rgb(255, 0, 0));
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.75);
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .logo {
+            max-width: 50%;
+            height: auto;
+            margin-right: 1cm;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="{{ url_for('static', filename='images/logo2.png') }}" class=logo> 
+    <div class="card">
+      <h1 class="mb-4 text-center">Register</h1>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="username" class="form-control" name="username" required>
+                <div id="emailHelp" class="form-text">Enter a valid username</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Are you an admin?</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="admin" id="adminYes" value="1">
+                    <label class="form-check-label" for="adminYes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="admin" id="adminNo" value="0" checked>
+                    <label class="form-check-label" for="adminNo">No</label>
+                </div>
+            </div>
+
+            
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="text-center mt-3">
+                <p> Go back to <a href="{{ url_for('login') }}">login</a></p>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>
